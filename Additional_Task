@@ -1,0 +1,39 @@
+// Игра угадайка. Программа загадывает случайное число. Пользователь его угадывает. Если пользователь дает неправильный ответ, 
+// то программа сообщает, больше загаданное число или меньше
+// Доп. задача с усложнением: на отгадывание дается 3 попытки.
+
+int number = RandomInt(1, 10);
+string stringNumber = Convert.ToString(number);
+
+int RandomInt(int arg1, int arg2)
+{
+    return new Random().Next(arg1, arg2);
+}
+
+int index = 0;
+while (index <=2)
+{
+    Console.WriteLine("Угадайте число: ");
+    int YourNumber = Convert.ToInt32(Console.ReadLine());
+    
+    if(YourNumber < number)
+    {
+    Console.WriteLine("Ваше число меньше"); 
+    }
+
+    if(YourNumber > number)
+    {
+    Console.WriteLine("Ваше число больше"); 
+    }
+
+    if (YourNumber == number)
+    {
+    Console.WriteLine("Угадали!"); 
+    break;
+    }
+ 
+    index++;
+}
+
+    
+   
